@@ -30,7 +30,7 @@ if file:
     if ext == 'csv':
         df = pd.read_csv(file).iloc[:10000,]
     elif ext == 'xlsx':
-        df = pd.read_excel(file).iloc[:10000]
+        df = pd.read_excel(file, engine='openpyxl').iloc[:10000]
     else:
         df = pd.read_csv(file,delimiter='\t').iloc[:10000,]
     
