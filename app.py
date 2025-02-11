@@ -3,7 +3,13 @@ import pandas as pd
 import numpy as np
 import plotly.express as px
 
-st.set_option(theme='light')
+st.set_page_config(
+    page_title="Kinematics Analysis",
+    layout="wide",  # optional
+    initial_sidebar_state="expanded",  # optional
+)
+
+
 st.header("Kinematics Analysis...")
 
 file = st.sidebar.file_uploader(
