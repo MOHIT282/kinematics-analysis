@@ -14,7 +14,7 @@ st.header("Kinematics Analysis...")
 
 file = st.sidebar.file_uploader(
     label='Upload your File here...',
-    type=['csv','txt']
+    type=['csv','xlsx','txt']
 )
 
 if file:
@@ -29,6 +29,8 @@ if file:
     df = None
     if ext == 'csv':
         df = pd.read_csv(file).iloc[:10000,]
+    elif ext == '.xlsx':
+        df = pd.read_excel(file).iloc[:10000]
     else:
         df = pd.read_csv(file,delimiter='\t').iloc[:10000,]
     
